@@ -82,7 +82,7 @@ export default function ProductDetailPage() {
               {product.name}
             </h1>
             <p className="text-3xl font-bold text-amber-600">
-              €{product.base_price.toFixed(2)}
+              €{Number(product.base_price).toFixed(2)}
             </p>
           </div>
 

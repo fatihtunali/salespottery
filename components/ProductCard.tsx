@@ -49,7 +49,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
         <div className="flex items-center justify-between">
           <span className="text-lg font-bold text-gray-900">
-            €{product.base_price.toFixed(2)}
+            €{Number(product.base_price).toFixed(2)}
           </span>
           {product.is_handmade && (
             <span className="text-xs text-amber-600 font-medium">Handmade</span>
