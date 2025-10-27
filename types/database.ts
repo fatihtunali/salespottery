@@ -187,3 +187,33 @@ export interface OrderItem {
 export interface OrderWithItems extends Order {
   items: OrderItem[];
 }
+
+// Currency Types
+export interface Currency {
+  id: number;
+  code: string;
+  name: string;
+  symbol: string;
+  is_active: boolean;
+  display_order: number;
+  created_at: Date;
+  updated_at: Date;
+}
+
+export interface ExchangeRate {
+  id: number;
+  currency_code: string;
+  rate: number;
+  updated_at: Date;
+}
+
+export interface VATRate {
+  id: number;
+  country_code: string;
+  country_name: string;
+  standard_rate: number;
+  reduced_rate: number | null;
+  is_eu: boolean;
+  created_at: Date;
+  updated_at: Date;
+}

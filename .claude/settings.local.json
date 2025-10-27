@@ -5,7 +5,8 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nStart Phase 2: Shopping Cart implementation\n\nDatabase:\n- Create cart and cart_items tables\n- Support session-based carts with email tracking\n- Auto-expire carts after 30 days\n\nTypes:\n- Add Cart, CartItem, CartItemWithProduct, CartWithItems types\n- Full TypeScript support for cart operations\n\nState Management:\n- Create CartContext for global cart state\n- Session ID generation and localStorage persistence\n- Cart operations: add, update, remove, clear, refresh\n- Item count tracking\n\nIntegration:\n- Add CartProvider to app layout\n- Prepare for cart API endpoints\n\nNext: Build cart API endpoints and UI\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
       "Bash(bash scripts/restart-server.sh:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(bash scripts/load-currencies-schema.sh:*)"
     ],
     "deny": [],
     "ask": []

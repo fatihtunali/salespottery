@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Category } from '@/types/database';
 import { useCart } from '@/contexts/CartContext';
+import CurrencySelector from './CurrencySelector';
 
 export default function Header() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -51,6 +52,8 @@ export default function Header() {
                 {category.name}
               </Link>
             ))}
+
+            <CurrencySelector />
 
             <Link href="/cart" className="relative p-2 text-gray-700 hover:text-amber-600 transition-colors">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
