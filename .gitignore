@@ -35,6 +35,8 @@ yarn-error.log*
 
 # scripts with credentials
 /scripts/*.sh
+# Allow example/template scripts
+!/scripts/*.sh.example
 
 # vercel
 .vercel

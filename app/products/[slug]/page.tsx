@@ -4,14 +4,19 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import ImageGallery from '@/components/ImageGallery';
 import { ProductWithDetails } from '@/types/database';
+import { useCart } from '@/contexts/CartContext';
 
 export default function ProductDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
+  const { addToCart } = useCart();
 
   const [product, setProduct] = useState<ProductWithDetails | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState(1);
+  const [addingToCart, setAddingToCart] = useState(false);
+  const [addedMessage, setAddedMessage] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -36,6 +41,40 @@ export default function ProductDetailPage() {
 
     fetchProduct();
   }, [slug]);
+
+  const handleAddToCart = async () => {
+    if (!product) return;
+
+    try {
+      setAddingToCart(true);
+      setAddedMessage(null);
+      await addToCart(product.id, quantity);
+      setAddedMessage('Item added to cart!');
+      setQuantity(1); // Reset quantity
+
+      // Clear success message after 3 seconds
+      setTimeout(() => {
+        setAddedMessage(null);
+      }, 3000);
+    } catch (error) {
+      console.error('Failed to add to cart:', error);
+      setAddedMessage('Failed to add to cart. Please try again.');
+    } finally {
+      setAddingToCart(false);
+    }
+  };
+
+  const incrementQuantity = () => {
+    if (product?.inventory && quantity < product.inventory.available_quantity) {
+      setQuantity(q => q + 1);
+    }
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(q => q - 1);
+    }
+  };
 
   if (loading) {
     return (
@@ -186,16 +225,66 @@ export default function ProductDetailPage() {
             )}
           </div>
 
+          {/* Quantity Selector */}
+          {inStock && (
+            <div className="flex items-center gap-4">
+              <span className="text-sm font-medium text-gray-700">Quantity:</span>
+              <div className="flex items-center border border-gray-300 rounded-lg">
+                <button
+                  onClick={decrementQuantity}
+                  disabled={quantity <= 1}
+                  className="px-4 py-2 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  min="1"
+                  max={product.inventory?.available_quantity || 1}
+                  value={quantity}
+                  onChange={(e) => {
+                    const val = parseInt(e.target.value);
+                    if (val >= 1 && val <= (product.inventory?.available_quantity || 1)) {
+                      setQuantity(val);
+                    }
+                  }}
+                  className="w-16 text-center py-2 border-x border-gray-300 focus:outline-none"
+                />
+                <button
+                  onClick={incrementQuantity}
+                  disabled={quantity >= (product.inventory?.available_quantity || 1)}
+                  className="px-4 py-2 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Success Message */}
+          {addedMessage && (
+            <div
+              className={`p-4 rounded-lg ${
+                addedMessage.includes('Failed')
+                  ? 'bg-red-50 text-red-700 border border-red-200'
+                  : 'bg-green-50 text-green-700 border border-green-200'
+              }`}
+            >
+              {addedMessage}
+            </div>
+          )}
+
           {/* Add to Cart Button */}
           <button
-            disabled={!inStock}
+            onClick={handleAddToCart}
+            disabled={!inStock || addingToCart}
             className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-colors ${
-              inStock
+              inStock && !addingToCart
                 ? 'bg-amber-600 text-white hover:bg-amber-700'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >
-            {inStock ? 'Add to Cart' : 'Out of Stock'}
+            {addingToCart ? 'Adding...' : inStock ? 'Add to Cart' : 'Out of Stock'}
           </button>
         </div>
       </div>

@@ -33,23 +33,29 @@ https://github.com/fatihtunali/salespottery
 - [x] Add product search and filtering
 - [x] Create API endpoints for products CRUD (GET endpoints complete)
 
-### 2. Shopping Cart
-- [ ] Design cart data structure (session-based or DB)
-- [ ] Create cart context/state management
-- [ ] Build add to cart functionality
-- [ ] Build cart page with quantity management
-- [ ] Implement cart persistence
-- [ ] Add cart icon with item count in header
+### 2. Shopping Cart ✅ COMPLETED
+- [x] Design cart data structure (session-based with DB)
+- [x] Create cart context/state management
+- [x] Build add to cart functionality
+- [x] Build cart page with quantity management
+- [x] Implement cart persistence (localStorage + MySQL)
+- [x] Add cart icon with item count in header
+- [x] Create cart API endpoints (GET, POST, PUT, DELETE)
+- [x] Add quantity controls (increase/decrease)
+- [x] Add remove item and clear cart functionality
 
-### 3. Checkout with Stripe
-- [ ] Set up Stripe account and API keys
-- [ ] Create orders table schema
-- [ ] Create order_items table schema
-- [ ] Build checkout page with customer info form
-- [ ] Implement Stripe payment integration
-- [ ] Add webhook handler for payment confirmation
-- [ ] Create order confirmation page
-- [ ] Send order confirmation emails
+### 3. Checkout with Manual Payment ✅ COMPLETED
+- [x] Create orders table schema
+- [x] Create order_items table schema
+- [x] Build checkout form with customer information
+- [x] Implement manual bank transfer payment system
+- [x] Create payment instructions page
+- [x] Create order confirmation page
+- [x] Add order and order item TypeScript types
+- [x] API endpoint for order creation
+- [ ] Send order confirmation emails (TODO: Phase 4)
+
+**Note**: Stripe was initially implemented but removed since it doesn't work in Turkey. Using manual bank transfer payment instead.
 
 ### 4. Admin Panel for Inventory
 - [ ] Create admin authentication system
@@ -124,3 +130,5 @@ NEXT_PUBLIC_APP_URL - Application URL
 - Handmade pottery = unique pieces, inventory critical
 - Multi-language support for European market
 - add to memory
+- memorize
+- memorize this updates

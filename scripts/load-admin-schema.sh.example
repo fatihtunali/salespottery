@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Load admin schema to MySQL server
+
+SERVER="user@your-server-ip"
+DB_USER="your_db_user"
+DB_PASS="your_db_password"
+DB_NAME="your_db_name"
+
+echo "📤 Copying admin schema to server..."
+scp database/admin-schema.sql $SERVER:~/admin-schema.sql
+
+echo "🗄️  Executing admin schema on MySQL..."
+ssh $SERVER "mysql -u $DB_USER -p'$DB_PASS' $DB_NAME < ~/admin-schema.sql && rm ~/admin-schema.sql"
+
+echo "✅ Admin schema loaded successfully!"
