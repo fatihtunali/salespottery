@@ -87,3 +87,33 @@ export interface ProductListItem extends Product {
   primary_image: string | null;
   available_quantity: number;
 }
+
+// Cart Types
+export interface Cart {
+  id: number;
+  session_id: string;
+  user_email: string | null;
+  created_at: Date;
+  updated_at: Date;
+  expires_at: Date;
+}
+
+export interface CartItem {
+  id: number;
+  cart_id: number;
+  product_id: number;
+  quantity: number;
+  price_at_addition: number;
+  created_at: Date;
+  updated_at: Date;
+}
+
+export interface CartItemWithProduct extends CartItem {
+  product: ProductListItem;
+}
+
+export interface CartWithItems extends Cart {
+  items: CartItemWithProduct[];
+  total: number;
+  itemCount: number;
+}

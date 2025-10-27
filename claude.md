@@ -123,3 +123,4 @@ NEXT_PUBLIC_APP_URL - Application URL
 - Focus on EU compliance (GDPR, VAT)
 - Handmade pottery = unique pieces, inventory critical
 - Multi-language support for European market
+- add to memory
