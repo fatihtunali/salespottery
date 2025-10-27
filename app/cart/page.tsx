@@ -4,6 +4,7 @@ import { useCart } from '@/contexts/CartContext';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import Price from '@/components/Price';
 
 export default function CartPage() {
   const { cart, itemCount, isLoading, updateQuantity, removeItem, clearCart } = useCart();
@@ -146,14 +147,12 @@ export default function CartPage() {
                               <p className="text-sm text-gray-500">{item.product.category_name}</p>
                             )}
                           </div>
-                          <p className="text-lg font-bold text-gray-900">
-                            €{itemTotal.toFixed(2)}
-                          </p>
+                          <Price amount={itemTotal} className="text-lg font-bold text-gray-900" />
                         </div>
 
-                        <p className="text-sm text-gray-600 mb-4">
-                          €{Number(item.price_at_addition).toFixed(2)} each
-                        </p>
+                        <div className="text-sm text-gray-600 mb-4">
+                          <Price amount={Number(item.price_at_addition)} /> each
+                        </div>
 
                         {/* Quantity Controls and Remove Button */}
                         <div className="flex items-center gap-4">
@@ -207,7 +206,7 @@ export default function CartPage() {
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-gray-600">
                   <span>Subtotal ({itemCount} {itemCount === 1 ? 'item' : 'items'})</span>
-                  <span>€{cart.total.toFixed(2)}</span>
+                  <Price amount={cart.total} />
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Shipping</span>
@@ -215,7 +214,7 @@ export default function CartPage() {
                 </div>
                 <div className="border-t border-gray-200 pt-3 flex justify-between text-xl font-bold text-gray-900">
                   <span>Total</span>
-                  <span>€{cart.total.toFixed(2)}</span>
+                  <Price amount={cart.total} />
                 </div>
               </div>
 

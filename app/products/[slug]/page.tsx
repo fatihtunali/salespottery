@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import ImageGallery from '@/components/ImageGallery';
 import { ProductWithDetails } from '@/types/database';
 import { useCart } from '@/contexts/CartContext';
+import Price from '@/components/Price';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -120,9 +121,7 @@ export default function ProductDetailPage() {
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               {product.name}
             </h1>
-            <p className="text-3xl font-bold text-amber-600">
-              €{Number(product.base_price).toFixed(2)}
-            </p>
+            <Price amount={product.base_price} className="text-3xl font-bold text-amber-600" />
           </div>
 
           {product.description && (

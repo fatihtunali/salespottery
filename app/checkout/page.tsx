@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useCart } from '@/contexts/CartContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Price from '@/components/Price';
 
 export default function CheckoutPage() {
   const { cart, itemCount } = useCart();
@@ -330,9 +331,10 @@ export default function CheckoutPage() {
                     <span className="text-gray-700">
                       {item.product.name} × {item.quantity}
                     </span>
-                    <span className="font-medium text-gray-900">
-                      €{(Number(item.price_at_addition) * item.quantity).toFixed(2)}
-                    </span>
+                    <Price
+                      amount={Number(item.price_at_addition) * item.quantity}
+                      className="font-medium text-gray-900"
+                    />
                   </div>
                 ))}
               </div>
@@ -340,15 +342,15 @@ export default function CheckoutPage() {
               <div className="border-t border-gray-200 pt-4 space-y-3">
                 <div className="flex justify-between text-gray-700">
                   <span>Subtotal</span>
-                  <span>€{subtotal.toFixed(2)}</span>
+                  <Price amount={subtotal} />
                 </div>
                 <div className="flex justify-between text-gray-700">
                   <span>Shipping</span>
-                  <span>€{shipping.toFixed(2)}</span>
+                  <Price amount={shipping} />
                 </div>
                 <div className="border-t border-gray-200 pt-3 flex justify-between text-xl font-bold text-gray-900">
                   <span>Total</span>
-                  <span>€{total.toFixed(2)}</span>
+                  <Price amount={total} />
                 </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProductListItem } from '@/types/database';
+import Price from './Price';
 
 interface ProductCardProps {
   product: ProductListItem;
@@ -48,9 +49,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         )}
         <div className="flex items-center justify-between">
-          <span className="text-lg font-bold text-gray-900">
-            €{Number(product.base_price).toFixed(2)}
-          </span>
+          <Price amount={product.base_price} className="text-lg font-bold text-gray-900" />
           {product.is_handmade && (
             <span className="text-xs text-amber-600 font-medium">Handmade</span>
           )}
