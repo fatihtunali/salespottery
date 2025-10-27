@@ -2,12 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ProductListItem } from '@/types/database';
 import Price from './Price';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProductCardProps {
   product: ProductListItem;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { t } = useLanguage();
   const inStock = product.available_quantity > 0;
   const imageUrl = product.primary_image || '/images/placeholder-product.jpg';
 
@@ -26,12 +28,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
         {product.is_featured && (
           <span className="absolute top-2 left-2 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-            Featured
+            {t('products.featured')}
           </span>
         )}
         {!inStock && (
           <span className="absolute top-2 right-2 bg-gray-800 text-white text-xs font-semibold px-3 py-1 rounded-full">
-            Sold Out
+            {t('products.soldOut')}
           </span>
         )}
       </div>
@@ -51,7 +53,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="flex items-center justify-between">
           <Price amount={product.base_price} className="text-lg font-bold text-gray-900" />
           {product.is_handmade && (
-            <span className="text-xs text-amber-600 font-medium">Handmade</span>
+            <span className="text-xs text-amber-600 font-medium">{t('products.handmade')}</span>
           )}
         </div>
       </div>

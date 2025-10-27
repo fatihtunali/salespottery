@@ -6,11 +6,13 @@ import ImageGallery from '@/components/ImageGallery';
 import { ProductWithDetails } from '@/types/database';
 import { useCart } from '@/contexts/CartContext';
 import Price from '@/components/Price';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProductDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
   const { addToCart } = useCart();
+  const { t } = useLanguage();
 
   const [product, setProduct] = useState<ProductWithDetails | null>(null);
   const [loading, setLoading] = useState(true);
@@ -50,7 +52,7 @@ export default function ProductDetailPage() {
       setAddingToCart(true);
       setAddedMessage(null);
       await addToCart(product.id, quantity);
-      setAddedMessage('Item added to cart!');
+      setAddedMessage(t('products.added'));
       setQuantity(1); // Reset quantity
 
       // Clear success message after 3 seconds
@@ -59,7 +61,7 @@ export default function ProductDetailPage() {
       }, 3000);
     } catch (error) {
       console.error('Failed to add to cart:', error);
-      setAddedMessage('Failed to add to cart. Please try again.');
+      setAddedMessage(t('products.failed'));
     } finally {
       setAddingToCart(false);
     }
@@ -96,7 +98,7 @@ export default function ProductDetailPage() {
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-          {error || 'Product not found'}
+          {error || t('productDetail.notFound')}
         </div>
       </div>
     );
@@ -138,32 +140,32 @@ export default function ProductDetailPage() {
 
           {/* Specifications */}
           <div className="border-t border-b border-gray-200 py-6 space-y-3">
-            <h3 className="font-semibold text-gray-900 mb-3">Specifications</h3>
+            <h3 className="font-semibold text-gray-900 mb-3">{t('productDetail.specifications')}</h3>
 
             {product.material && (
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Material:</span>
+                <span className="text-gray-600">{t('productDetail.material')}:</span>
                 <span className="font-medium text-gray-900">{product.material}</span>
               </div>
             )}
 
             {product.color && (
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Color:</span>
+                <span className="text-gray-600">{t('productDetail.color')}:</span>
                 <span className="font-medium text-gray-900">{product.color}</span>
               </div>
             )}
 
             {product.technique && (
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Technique:</span>
+                <span className="text-gray-600">{t('productDetail.technique')}:</span>
                 <span className="font-medium text-gray-900">{product.technique}</span>
               </div>
             )}
 
             {(product.height_cm || product.width_cm || product.depth_cm) && (
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Dimensions:</span>
+                <span className="text-gray-600">{t('productDetail.dimensions')}:</span>
                 <span className="font-medium text-gray-900">
                   {product.height_cm && `H: ${product.height_cm}cm`}
                   {product.width_cm && ` W: ${product.width_cm}cm`}
@@ -174,7 +176,7 @@ export default function ProductDetailPage() {
 
             {product.weight_kg && (
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Weight:</span>
+                <span className="text-gray-600">{t('productDetail.weight')}:</span>
                 <span className="font-medium text-gray-900">{product.weight_kg} kg</span>
               </div>
             )}
@@ -182,26 +184,26 @@ export default function ProductDetailPage() {
 
           {/* Care Instructions */}
           <div className="space-y-2">
-            <h3 className="font-semibold text-gray-900">Care Instructions</h3>
+            <h3 className="font-semibold text-gray-900">{t('productDetail.careInstructions')}</h3>
             <div className="flex flex-wrap gap-2">
               {product.is_dishwasher_safe && (
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  ✓ Dishwasher Safe
+                  ✓ {t('productDetail.dishwasherSafe')}
                 </span>
               )}
               {product.is_microwave_safe && (
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  ✓ Microwave Safe
+                  ✓ {t('productDetail.microwaveSafe')}
                 </span>
               )}
               {product.is_food_safe && (
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  ✓ Food Safe
+                  ✓ {t('productDetail.foodSafe')}
                 </span>
               )}
               {product.is_handmade && (
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-                  ✓ Handmade
+                  ✓ {t('products.handmade')}
                 </span>
               )}
             </div>
@@ -213,13 +215,13 @@ export default function ProductDetailPage() {
               <>
                 <span className="inline-flex items-center w-3 h-3 bg-green-500 rounded-full"></span>
                 <span className="text-sm text-gray-700">
-                  In Stock ({product.inventory?.available_quantity} available)
+                  {t('products.inStock')} ({product.inventory?.available_quantity} {t('products.available')})
                 </span>
               </>
             ) : (
               <>
                 <span className="inline-flex items-center w-3 h-3 bg-red-500 rounded-full"></span>
-                <span className="text-sm text-gray-700">Out of Stock</span>
+                <span className="text-sm text-gray-700">{t('products.outOfStock')}</span>
               </>
             )}
           </div>
@@ -227,7 +229,7 @@ export default function ProductDetailPage() {
           {/* Quantity Selector */}
           {inStock && (
             <div className="flex items-center gap-4">
-              <span className="text-sm font-medium text-gray-700">Quantity:</span>
+              <span className="text-sm font-medium text-gray-700">{t('productDetail.quantity')}:</span>
               <div className="flex items-center border border-gray-300 rounded-lg">
                 <button
                   onClick={decrementQuantity}
@@ -283,7 +285,7 @@ export default function ProductDetailPage() {
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >
-            {addingToCart ? 'Adding...' : inStock ? 'Add to Cart' : 'Out of Stock'}
+            {addingToCart ? t('products.adding') : inStock ? t('products.addToCart') : t('products.outOfStock')}
           </button>
         </div>
       </div>
