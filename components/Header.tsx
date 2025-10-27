@@ -5,11 +5,14 @@ import { useEffect, useState } from 'react';
 import { Category } from '@/types/database';
 import { useCart } from '@/contexts/CartContext';
 import CurrencySelector from './CurrencySelector';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Header() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { itemCount } = useCart();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -40,7 +43,7 @@ export default function Header() {
               href="/products"
               className="text-gray-700 hover:text-amber-600 font-medium transition-colors"
             >
-              All Products
+              {t('products.allProducts')}
             </Link>
 
             {categories.map((category) => (
@@ -53,6 +56,7 @@ export default function Header() {
               </Link>
             ))}
 
+            <LanguageSelector />
             <CurrencySelector />
 
             <Link href="/cart" className="relative p-2 text-gray-700 hover:text-amber-600 transition-colors">
@@ -90,7 +94,7 @@ export default function Header() {
               className="block py-2 text-gray-700 hover:text-amber-600 font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              All Products
+              {t('products.allProducts')}
             </Link>
             {categories.map((category) => (
               <Link
@@ -107,7 +111,7 @@ export default function Header() {
               className="block py-2 text-gray-700 hover:text-amber-600"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Shopping Cart ({itemCount})
+              {t('cart.title')} ({itemCount})
             </Link>
           </div>
         )}

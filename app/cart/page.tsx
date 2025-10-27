@@ -5,9 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import Price from '@/components/Price';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function CartPage() {
   const { cart, itemCount, isLoading, updateQuantity, removeItem, clearCart } = useCart();
+  const { t } = useLanguage();
   const [updatingItems, setUpdatingItems] = useState<Set<number>>(new Set());
   const [removingItems, setRemovingItems] = useState<Set<number>>(new Set());
 
@@ -71,7 +73,7 @@ export default function CartPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">{t('cart.title')}</h1>
 
         {isEmpty ? (
           <div className="text-center py-12">
@@ -88,13 +90,13 @@ export default function CartPage() {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            <h2 className="text-xl font-semibold text-gray-700 mb-2">Your cart is empty</h2>
-            <p className="text-gray-500 mb-6">Add some beautiful pottery pieces to get started!</p>
+            <h2 className="text-xl font-semibold text-gray-700 mb-2">{t('cart.empty')}</h2>
+            <p className="text-gray-500 mb-6">{t('cart.emptyMessage')}</p>
             <Link
               href="/products"
               className="inline-block bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
             >
-              Browse Products
+              {t('cart.browseProducts')}
             </Link>
           </div>
         ) : (
@@ -151,7 +153,7 @@ export default function CartPage() {
                         </div>
 
                         <div className="text-sm text-gray-600 mb-4">
-                          <Price amount={Number(item.price_at_addition)} /> each
+                          <Price amount={Number(item.price_at_addition)} /> {t('cart.each')}
                         </div>
 
                         {/* Quantity Controls and Remove Button */}
@@ -185,7 +187,7 @@ export default function CartPage() {
                             disabled={isRemoving}
                             className="text-red-600 hover:text-red-700 text-sm font-medium disabled:opacity-50 transition-colors"
                           >
-                            {isRemoving ? 'Removing...' : 'Remove'}
+                            {isRemoving ? t('cart.removing') : t('cart.remove')}
                           </button>
 
                           {item.product.available_quantity <= 5 && (
@@ -205,15 +207,15 @@ export default function CartPage() {
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between text-gray-600">
-                  <span>Subtotal ({itemCount} {itemCount === 1 ? 'item' : 'items'})</span>
+                  <span>{t('cart.subtotal')} ({itemCount} {itemCount === 1 ? t('cart.item') : t('cart.items')})</span>
                   <Price amount={cart.total} />
                 </div>
                 <div className="flex justify-between text-gray-600">
-                  <span>Shipping</span>
-                  <span>Calculated at checkout</span>
+                  <span>{t('cart.shipping')}</span>
+                  <span>{t('cart.shippingCalculated')}</span>
                 </div>
                 <div className="border-t border-gray-200 pt-3 flex justify-between text-xl font-bold text-gray-900">
-                  <span>Total</span>
+                  <span>{t('cart.total')}</span>
                   <Price amount={cart.total} />
                 </div>
               </div>
@@ -223,19 +225,19 @@ export default function CartPage() {
                   href="/checkout"
                   className="block w-full bg-amber-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-amber-700 transition-colors text-center"
                 >
-                  Proceed to Checkout
+                  {t('cart.proceedToCheckout')}
                 </Link>
                 <button
                   onClick={handleClearCart}
                   className="w-full bg-white text-gray-700 py-2 px-6 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-colors"
                 >
-                  Clear Cart
+                  {t('cart.clearCart')}
                 </button>
                 <Link
                   href="/products"
                   className="block text-center text-amber-600 hover:text-amber-700 font-medium"
                 >
-                  Continue Shopping
+                  {t('cart.continueShopping')}
                 </Link>
               </div>
             </div>
