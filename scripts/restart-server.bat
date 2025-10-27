@@ -27,6 +27,16 @@ timeout /t 2 /nobreak >nul
 
 :build
 echo.
+echo Installing dependencies...
+call npm install
+
+if %errorlevel% neq 0 (
+    echo.
+    echo npm install failed!
+    exit /b 1
+)
+
+echo.
 echo Building production...
 call npm run build
 
