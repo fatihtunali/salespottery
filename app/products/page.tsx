@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import ProductCard from '@/components/ProductCard';
 import ProductFilters from '@/components/ProductFilters';
 import { ProductListItem } from '@/types/database';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProductsResponse {
   products: ProductListItem[];
@@ -17,6 +18,7 @@ interface ProductsResponse {
 }
 
 export default function ProductsPage() {
+  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const [data, setData] = useState<ProductsResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -66,7 +68,7 @@ export default function ProductsPage() {
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-          Error: {error}
+          {t('products.error')}: {error}
         </div>
       </div>
     );
@@ -77,9 +79,9 @@ export default function ProductsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="text-center py-12">
           <h2 className="text-2xl font-semibold text-gray-700 mb-2">
-            No products found
+            {t('products.noProducts')}
           </h2>
-          <p className="text-gray-500">Try adjusting your search or filters</p>
+          <p className="text-gray-500">{t('products.tryAdjusting')}</p>
         </div>
       </div>
     );
@@ -91,10 +93,10 @@ export default function ProductsPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-2">
-          Handmade Pottery Collection
+          {t('products.pageTitle')}
         </h1>
         <p className="text-gray-600">
-          Showing {products.length} of {pagination.total} products
+          {t('products.showing')} {products.length} {t('products.of')} {pagination.total} {t('products.productsCount')}
         </p>
       </div>
 

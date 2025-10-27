@@ -28,27 +28,56 @@
   },
   "header": {
     "welcomeMessage": "SalesPottery'ye Hoş Geldiniz",
-    "searchPlacehold er": "Ürün ara..."
+    "searchPlaceholder": "Ürün ara..."
   },
   "footer": {
-    "copyright": "© 2024 SalesPottery. Tüm hakları saklıdır.",
-    "aboutUs": "Hakkımızda",
-    "termsOfService": "Kullanım Koşulları",
-    "privacyPolicy": "Gizlilik Politikası",
+    "companyDescription": "Avrupalı zanaatkarlardan el yapımı seramik. Her parça benzersiz ve sevgiyle yapılmıştır.",
+    "shop": "Alışveriş",
+    "allProducts": "Tüm Ürünler",
+    "bowls": "Kaseler",
+    "plates": "Tabaklar",
+    "featuredItems": "Öne Çıkan Ürünler",
+    "customerService": "Müşteri Hizmetleri",
+    "contactUs": "Bize Ulaşın",
     "shippingInfo": "Kargo Bilgileri",
-    "returns": "İade & Geri Ödeme"
+    "returns": "İadeler",
+    "faq": "SSS",
+    "legal": "Yasal",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsConditions": "Şartlar ve Koşullar",
+    "gdpr": "GDPR Uyumluluğu",
+    "copyright": "© {year} SalesPottery. Tüm hakları saklıdır.",
+    "aboutUs": "Hakkımızda",
+    "termsOfService": "Kullanım Koşulları"
   },
   "home": {
-    "heroTitle": "El Yapımı Seramik",
-    "heroSubtitle": "Eviniz için benzersiz, zanaat seramik ürünler keşfedin",
+    "heroTitle": "Avrupa'dan El Yapımı Seramik",
+    "heroSubtitle": "Tutku ve gelenekle üretilmiş benzersiz, el yapımı seramik parçaları keşfedin. Her parça kendi hikayesini anlatır.",
     "shopNow": "Alışverişe Başla",
+    "shopCollection": "Koleksiyonu Görüntüle",
+    "featuredItems": "Öne Çıkanlar",
     "featuredProducts": "Öne Çıkan Ürünler",
-    "viewAll": "Tüm Ürünleri Görüntüle"
+    "featuredCollection": "Öne Çıkan Koleksiyon",
+    "featuredSubtitle": "En popüler el yapımı ürünlerimiz",
+    "viewAll": "Tüm Ürünleri Görüntüle",
+    "feature1Title": "%100 El Yapımı",
+    "feature1Description": "Her parça yetenekli zanaatkarlar tarafından özenle üretilir",
+    "feature2Title": "Avrupa'ya Kargo",
+    "feature2Description": "Avrupa genelinde hızlı ve güvenli teslimat",
+    "feature3Title": "Kalite Garantisi",
+    "feature3Description": "Günlük kullanım için gıda için güvenli, dayanıklı seramikler"
   },
   "products": {
     "title": "Ürünler",
     "allProducts": "Tüm Ürünler",
+    "pageTitle": "El Yapımı Seramik Koleksiyonu",
+    "showing": "Gösterilen",
+    "of": "/",
+    "productsCount": "ürün",
     "categories": "Kategoriler",
+    "searchPlaceholder": "Seramik ara...",
+    "searchButton": "Ara",
+    "clearFilters": "Tüm filtreleri temizle",
     "sortBy": "Sırala",
     "priceAsc": "Fiyat: Düşükten Yükseğe",
     "priceDesc": "Fiyat: Yüksekten Düşüğe",
@@ -62,10 +91,12 @@
     "soldOut": "Tükendi",
     "available": "mevcut",
     "noProducts": "Ürün bulunamadı",
+    "tryAdjusting": "Arama veya filtrelerinizi ayarlamayı deneyin",
     "addToCart": "Sepete Ekle",
     "adding": "Ekleniyor...",
     "added": "Sepete eklendi!",
-    "failed": "Sepete eklenemedi. Lütfen tekrar deneyin."
+    "failed": "Sepete eklenemedi. Lütfen tekrar deneyin.",
+    "error": "Hata"
   },
   "productDetail": {
     "specifications": "Özellikler",
@@ -183,5 +214,17 @@
     "loadingProducts": "Ürünler yükleniyor...",
     "deleteConfirm": "\"{name}\" ürününü silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
     "deleteFailed": "Ürün silinemedi"
+  },
+  "categoryNames": {
+    "bowls": "Kaseler",
+    "plates": "Tabaklar",
+    "cups": "Fincanlar",
+    "mugs": "Kupalar",
+    "vases": "Vazolar",
+    "platters": "Servis Tablaları",
+    "dinnerware": "Yemek Takımları",
+    "serveware": "Servis Ürünleri",
+    "decorative": "Dekoratif",
+    "tableware": "Sofra Takımları"
   }
 }

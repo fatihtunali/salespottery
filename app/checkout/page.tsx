@@ -187,7 +187,7 @@ export default function CheckoutPage() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Address Line 1 *
+                      {t('checkout.addressLine1')} {t('checkout.required')}
                     </label>
                     <input
                       type="text"
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Address Line 2
+                      {t('checkout.addressLine2')}
                     </label>
                     <input
                       type="text"
@@ -215,7 +215,7 @@ export default function CheckoutPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        City *
+                        {t('checkout.city')} {t('checkout.required')}
                       </label>
                       <input
                         type="text"
@@ -229,7 +229,7 @@ export default function CheckoutPage() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Postal Code *
+                        {t('checkout.postalCode')} {t('checkout.required')}
                       </label>
                       <input
                         type="text"
@@ -244,7 +244,7 @@ export default function CheckoutPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Country *
+                      {t('checkout.country')} {t('checkout.required')}
                     </label>
                     <select
                       name="shipping_country"

@@ -6,7 +6,9 @@
       "Bash(git push:*)",
       "Bash(bash scripts/restart-server.sh:*)",
       "Bash(npm install:*)",
-      "Bash(bash scripts/load-currencies-schema.sh:*)"
+      "Bash(bash scripts/load-currencies-schema.sh:*)",
+      "Bash(npm run build:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

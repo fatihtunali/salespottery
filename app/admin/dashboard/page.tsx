@@ -100,6 +100,12 @@ export default function AdminDashboardPage() {
             </div>
             <div className="flex gap-4">
               <Link
+                href="/admin/products"
+                className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium"
+              >
+                Products
+              </Link>
+              <Link
                 href="/"
                 className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium"
               >

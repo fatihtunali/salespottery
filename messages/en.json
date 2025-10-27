@@ -31,24 +31,53 @@
     "searchPlaceholder": "Search products..."
   },
   "footer": {
-    "copyright": "© 2024 SalesPottery. All rights reserved.",
-    "aboutUs": "About Us",
-    "termsOfService": "Terms of Service",
+    "companyDescription": "Handcrafted pottery from European artisans. Each piece is unique and made with love.",
+    "shop": "Shop",
+    "allProducts": "All Products",
+    "bowls": "Bowls",
+    "plates": "Plates",
+    "featuredItems": "Featured Items",
+    "customerService": "Customer Service",
+    "contactUs": "Contact Us",
+    "shippingInfo": "Shipping Info",
+    "returns": "Returns",
+    "faq": "FAQ",
+    "legal": "Legal",
     "privacyPolicy": "Privacy Policy",
-    "shippingInfo": "Shipping Information",
-    "returns": "Returns & Refunds"
+    "termsConditions": "Terms & Conditions",
+    "gdpr": "GDPR Compliance",
+    "copyright": "© {year} SalesPottery. All rights reserved.",
+    "aboutUs": "About Us",
+    "termsOfService": "Terms of Service"
   },
   "home": {
-    "heroTitle": "Handcrafted Pottery",
-    "heroSubtitle": "Discover unique, artisanal ceramic pieces for your home",
+    "heroTitle": "Handcrafted Pottery from Europe",
+    "heroSubtitle": "Discover unique, handmade ceramic pieces crafted with passion and tradition. Each piece tells its own story.",
     "shopNow": "Shop Now",
+    "shopCollection": "Shop Collection",
+    "featuredItems": "Featured Items",
     "featuredProducts": "Featured Products",
-    "viewAll": "View All Products"
+    "featuredCollection": "Featured Collection",
+    "featuredSubtitle": "Our most popular handcrafted pieces",
+    "viewAll": "View All Products",
+    "feature1Title": "100% Handmade",
+    "feature1Description": "Each piece is carefully crafted by skilled artisans",
+    "feature2Title": "European Shipping",
+    "feature2Description": "Fast and secure delivery across Europe",
+    "feature3Title": "Quality Guaranteed",
+    "feature3Description": "Food-safe, durable ceramics for everyday use"
   },
   "products": {
     "title": "Products",
     "allProducts": "All Products",
+    "pageTitle": "Handmade Pottery Collection",
+    "showing": "Showing",
+    "of": "of",
+    "productsCount": "products",
     "categories": "Categories",
+    "searchPlaceholder": "Search pottery...",
+    "searchButton": "Search",
+    "clearFilters": "Clear all filters",
     "sortBy": "Sort By",
     "priceAsc": "Price: Low to High",
     "priceDesc": "Price: High to Low",
@@ -62,10 +91,12 @@
     "soldOut": "Sold Out",
     "available": "available",
     "noProducts": "No products found",
+    "tryAdjusting": "Try adjusting your search or filters",
     "addToCart": "Add to Cart",
     "adding": "Adding...",
     "added": "Added to cart!",
-    "failed": "Failed to add to cart. Please try again."
+    "failed": "Failed to add to cart. Please try again.",
+    "error": "Error"
   },
   "productDetail": {
     "specifications": "Specifications",
@@ -112,6 +143,7 @@
     "addressLine1": "Address Line 1",
     "addressLine2": "Address Line 2",
     "city": "City",
+    "state": "State",
     "postalCode": "Postal Code",
     "country": "Country",
     "billingAddress": "Billing Address",
@@ -183,5 +215,17 @@
     "loadingProducts": "Loading products...",
     "deleteConfirm": "Delete product \"{name}\"? This cannot be undone.",
     "deleteFailed": "Failed to delete product"
+  },
+  "categoryNames": {
+    "bowls": "Bowls",
+    "plates": "Plates",
+    "cups": "Cups",
+    "mugs": "Mugs",
+    "vases": "Vases",
+    "platters": "Platters",
+    "dinnerware": "Dinnerware",
+    "serveware": "Serveware",
+    "decorative": "Decorative",
+    "tableware": "Tableware"
   }
 }

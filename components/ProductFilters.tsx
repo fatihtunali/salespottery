@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Category } from '@/types/database';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProductFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { t } = useLanguage();
   const [categories, setCategories] = useState<(Category & { product_count: number })[]>([]);
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
 
@@ -52,6 +54,14 @@ export default function ProductFilters() {
     router.push('/products');
   };
 
+  // Helper function to translate category names
+  const translateCategoryName = (categorySlug: string, categoryName: string) => {
+    const translationKey = `categoryNames.${categorySlug}`;
+    const translated = t(translationKey);
+    // If translation key is not found, it returns the key itself, so use original name
+    return translated === translationKey ? categoryName : translated;
+  };
+
   const currentCategory = searchParams.get('category');
   const hasFilters = searchParams.get('search') || searchParams.get('category');
 
@@ -64,21 +74,21 @@ export default function ProductFilters() {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search pottery..."
+            placeholder={t('products.searchPlaceholder')}
             className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
           />
           <button
             type="submit"
             className="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
           >
-            Search
+            {t('products.searchButton')}
           </button>
         </div>
       </form>
 
       {/* Categories */}
       <div>
-        <h3 className="font-semibold text-gray-900 mb-3">Categories</h3>
+        <h3 className="font-semibold text-gray-900 mb-3">{t('products.categories')}</h3>
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <button
@@ -90,7 +100,7 @@ export default function ProductFilters() {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              {category.name} ({category.product_count})
+              {translateCategoryName(category.slug, category.name)} ({category.product_count})
             </button>
           ))}
         </div>
@@ -103,7 +113,7 @@ export default function ProductFilters() {
             onClick={clearFilters}
             className="text-sm text-amber-600 hover:text-amber-700 font-medium"
           >
-            Clear all filters
+            {t('products.clearFilters')}
           </button>
         </div>
       )}

@@ -14,6 +14,14 @@ export default function Header() {
   const { itemCount } = useCart();
   const { t } = useLanguage();
 
+  // Helper function to translate category names
+  const translateCategoryName = (categorySlug: string, categoryName: string) => {
+    const translationKey = `categoryNames.${categorySlug}`;
+    const translated = t(translationKey);
+    // If translation key is not found, it returns the key itself, so use original name
+    return translated === translationKey ? categoryName : translated;
+  };
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -52,7 +60,7 @@ export default function Header() {
                 href={`/products?category=${category.slug}`}
                 className="text-gray-700 hover:text-amber-600 transition-colors"
               >
-                {category.name}
+                {translateCategoryName(category.slug, category.name)}
               </Link>
             ))}
 
@@ -103,7 +111,7 @@ export default function Header() {
                 className="block py-2 text-gray-700 hover:text-amber-600"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {category.name}
+                {translateCategoryName(category.slug, category.name)}
               </Link>
             ))}
             <Link

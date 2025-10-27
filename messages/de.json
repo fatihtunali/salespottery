@@ -31,24 +31,53 @@
     "searchPlaceholder": "Produkte suchen..."
   },
   "footer": {
-    "copyright": "© 2024 SalesPottery. Alle Rechte vorbehalten.",
-    "aboutUs": "Über uns",
-    "termsOfService": "Nutzungsbedingungen",
-    "privacyPolicy": "Datenschutzrichtlinie",
+    "companyDescription": "Handgefertigte Keramik von europäischen Kunsthandwerkern. Jedes Stück ist einzigartig und mit Liebe gefertigt.",
+    "shop": "Shop",
+    "allProducts": "Alle Produkte",
+    "bowls": "Schalen",
+    "plates": "Teller",
+    "featuredItems": "Empfohlene Artikel",
+    "customerService": "Kundenservice",
+    "contactUs": "Kontaktieren Sie uns",
     "shippingInfo": "Versandinformationen",
-    "returns": "Rücksendungen & Rückerstattungen"
+    "returns": "Rücksendungen",
+    "faq": "FAQ",
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsConditions": "Allgemeine Geschäftsbedingungen",
+    "gdpr": "DSGVO-Konformität",
+    "copyright": "© {year} SalesPottery. Alle Rechte vorbehalten.",
+    "aboutUs": "Über uns",
+    "termsOfService": "Nutzungsbedingungen"
   },
   "home": {
-    "heroTitle": "Handgefertigte Keramik",
-    "heroSubtitle": "Entdecken Sie einzigartige, kunsthandwerkliche Keramikstücke für Ihr Zuhause",
+    "heroTitle": "Handgefertigte Keramik aus Europa",
+    "heroSubtitle": "Entdecken Sie einzigartige, handgefertigte Keramikstücke, die mit Leidenschaft und Tradition hergestellt werden. Jedes Stück erzählt seine eigene Geschichte.",
     "shopNow": "Jetzt einkaufen",
+    "shopCollection": "Kollektion ansehen",
+    "featuredItems": "Empfohlene Artikel",
     "featuredProducts": "Empfohlene Produkte",
-    "viewAll": "Alle Produkte anzeigen"
+    "featuredCollection": "Empfohlene Kollektion",
+    "featuredSubtitle": "Unsere beliebtesten handgefertigten Stücke",
+    "viewAll": "Alle Produkte anzeigen",
+    "feature1Title": "100% Handgemacht",
+    "feature1Description": "Jedes Stück wird sorgfältig von erfahrenen Handwerkern gefertigt",
+    "feature2Title": "Europa-Versand",
+    "feature2Description": "Schnelle und sichere Lieferung in ganz Europa",
+    "feature3Title": "Qualität garantiert",
+    "feature3Description": "Lebensmittelechte, langlebige Keramik für den täglichen Gebrauch"
   },
   "products": {
     "title": "Produkte",
     "allProducts": "Alle Produkte",
+    "pageTitle": "Handgefertigte Keramikkollektion",
+    "showing": "Anzeige",
+    "of": "von",
+    "productsCount": "Produkten",
     "categories": "Kategorien",
+    "searchPlaceholder": "Keramik suchen...",
+    "searchButton": "Suchen",
+    "clearFilters": "Alle Filter löschen",
     "sortBy": "Sortieren nach",
     "priceAsc": "Preis: Niedrig bis Hoch",
     "priceDesc": "Preis: Hoch bis Niedrig",
@@ -62,10 +91,12 @@
     "soldOut": "Ausverkauft",
     "available": "verfügbar",
     "noProducts": "Keine Produkte gefunden",
+    "tryAdjusting": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
     "addToCart": "In den Warenkorb",
     "adding": "Wird hinzugefügt...",
     "added": "Zum Warenkorb hinzugefügt!",
-    "failed": "Fehler beim Hinzufügen zum Warenkorb. Bitte versuchen Sie es erneut."
+    "failed": "Fehler beim Hinzufügen zum Warenkorb. Bitte versuchen Sie es erneut.",
+    "error": "Fehler"
   },
   "productDetail": {
     "specifications": "Spezifikationen",
@@ -183,5 +214,17 @@
     "loadingProducts": "Produkte werden geladen...",
     "deleteConfirm": "Produkt \"{name}\" löschen? Dies kann nicht rückgängig gemacht werden.",
     "deleteFailed": "Produkt konnte nicht gelöscht werden"
+  },
+  "categoryNames": {
+    "bowls": "Schalen",
+    "plates": "Teller",
+    "cups": "Tassen",
+    "mugs": "Becher",
+    "vases": "Vasen",
+    "platters": "Platten",
+    "dinnerware": "Geschirr",
+    "serveware": "Serviergeschirr",
+    "decorative": "Dekorativ",
+    "tableware": "Tafelgeschirr"
   }
 }
