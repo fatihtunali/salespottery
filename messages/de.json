@@ -67,6 +67,26 @@
     "feature3Title": "Qualität garantiert",
     "feature3Description": "Lebensmittelechte, langlebige Keramik für den täglichen Gebrauch"
   },
+  "wholesale": {
+    "catalogBadge": "Großhandel Keramikkatalog",
+    "heroTitle": "Premium handgefertigte Keramik für Ihr Unternehmen",
+    "heroSubtitle": "Entdecken Sie unsere umfangreiche Kollektion handgefertigter Keramikstücke. Perfekt für Einzelhändler, Restaurants, Hotels und Geschenkläden. Mindestbestellmenge: 50 Stück.",
+    "browseCatalog": "Katalog durchsuchen",
+    "contactWhatsApp": "Kontakt über WhatsApp",
+    "requestQuote": "Großhandelsangebot anfordern",
+    "whyChooseTitle": "Warum unseren Großhandelsservice wählen",
+    "whyChooseSubtitle": "Qualitätsprodukte und zuverlässiger Service für Ihr Unternehmen",
+    "qualityTitle": "100% handgefertigte Qualität",
+    "qualityDescription": "Jedes Stück wird von erfahrenen Handwerkern mit traditionellen Techniken und hochwertigen Materialien sorgfältig gefertigt.",
+    "pricingTitle": "Mengenpreise verfügbar",
+    "pricingDescription": "Wettbewerbsfähige Großhandelspreise für Bestellungen ab 50 Stück. Mengenrabatte für größere Bestellungen.",
+    "communicationTitle": "Direkte Kommunikation",
+    "communicationDescription": "Erhalten Sie sofortige Antworten über WhatsApp, E-Mail oder Telefon. Wir helfen gerne bei Angeboten und Sonderbestellungen.",
+    "pricingAvailable": "Großhandelspreise verfügbar",
+    "pricingNote": "Fordern Sie ein Angebot für Großhandelspreise an (mindestens 50 Stück)",
+    "wholesaleAvailable": "Großhandel verfügbar",
+    "contactDirectly": "Kontaktieren Sie uns direkt"
+  },
   "products": {
     "title": "Produkte",
     "allProducts": "Alle Produkte",

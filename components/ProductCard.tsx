@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProductListItem } from '@/types/database';
-import Price from './Price';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProductCardProps {
@@ -18,12 +17,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       href={`/products/${product.slug}`}
       className="group block bg-white rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden"
     >
-      <div className="relative aspect-square overflow-hidden bg-gray-100">
+      <div className="relative aspect-square overflow-hidden bg-white border-b border-gray-200">
         <Image
           src={imageUrl}
           alt={product.name}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {product.is_featured && (
@@ -51,7 +50,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         )}
         <div className="flex items-center justify-between">
-          <Price amount={product.base_price} className="text-lg font-bold text-gray-900" />
+          <span className="text-sm font-semibold text-amber-600">{t('wholesale.wholesaleAvailable')}</span>
           {product.is_handmade && (
             <span className="text-xs text-amber-600 font-medium">{t('products.handmade')}</span>
           )}

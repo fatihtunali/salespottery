@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Locale = 'en' | 'tr' | 'de';
+type Locale = 'en' | 'tr' | 'de' | 'fr';
 
 type Messages = {
   [key: string]: any;
@@ -28,6 +28,7 @@ const localeNames: Record<Locale, string> = {
   en: 'English',
   tr: 'Türkçe',
   de: 'Deutsch',
+  fr: 'Français',
 };
 
 export { localeNames };
@@ -40,7 +41,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Load saved locale from localStorage
     const savedLocale = localStorage.getItem('selected_locale') as Locale | null;
-    if (savedLocale && ['en', 'tr', 'de'].includes(savedLocale)) {
+    if (savedLocale && ['en', 'tr', 'de', 'fr'].includes(savedLocale)) {
       setLocaleState(savedLocale);
     }
   }, []);

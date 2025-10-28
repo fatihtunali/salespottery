@@ -8,7 +8,11 @@
       "Bash(npm install:*)",
       "Bash(bash scripts/load-currencies-schema.sh:*)",
       "Bash(npm run build:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(node scripts/run-wholesale-migration.js:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node scripts/add-world-set-products.js:*)"
     ],
     "deny": [],
     "ask": []

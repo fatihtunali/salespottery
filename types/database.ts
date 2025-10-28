@@ -88,104 +88,26 @@ export interface ProductListItem extends Product {
   available_quantity: number;
 }
 
-// Cart Types
-export interface Cart {
+// Inquiry Types for Wholesale
+export type InquiryStatus = 'new' | 'contacted' | 'quoted' | 'closed';
+
+export interface Inquiry {
   id: number;
-  session_id: string;
-  user_email: string | null;
-  created_at: Date;
-  updated_at: Date;
-  expires_at: Date;
-}
-
-export interface CartItem {
-  id: number;
-  cart_id: number;
-  product_id: number;
-  quantity: number;
-  price_at_addition: number;
-  created_at: Date;
-  updated_at: Date;
-}
-
-export interface CartItemWithProduct extends CartItem {
-  product: ProductListItem;
-}
-
-export interface CartWithItems extends Cart {
-  items: CartItemWithProduct[];
-  total: number;
-  itemCount: number;
-}
-
-// Order Types
-export type PaymentStatus = 'pending' | 'paid' | 'failed' | 'refunded';
-export type OrderStatus = 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
-
-export interface Order {
-  id: number;
-  order_number: string;
-
-  // Customer Information
-  customer_email: string;
-  customer_name: string;
-  customer_phone: string | null;
-
-  // Shipping Address
-  shipping_address_line1: string;
-  shipping_address_line2: string | null;
-  shipping_city: string;
-  shipping_state: string | null;
-  shipping_postal_code: string;
-  shipping_country: string;
-
-  // Billing Address
-  billing_address_line1: string | null;
-  billing_address_line2: string | null;
-  billing_city: string | null;
-  billing_state: string | null;
-  billing_postal_code: string | null;
-  billing_country: string | null;
-
-  // Order Amounts
-  subtotal: number;
-  shipping_cost: number;
-  tax: number;
-  total: number;
-  currency: string;
-
-  // Stripe Information
-  stripe_payment_intent_id: string | null;
-  stripe_checkout_session_id: string | null;
-
-  // Order Status
-  payment_status: PaymentStatus;
-  order_status: OrderStatus;
-
-  // Notes
-  customer_notes: string | null;
-  admin_notes: string | null;
-
-  // Timestamps
-  created_at: Date;
-  updated_at: Date;
-}
-
-export interface OrderItem {
-  id: number;
-  order_id: number;
   product_id: number;
   product_name: string;
-  product_sku: string;
-  product_image: string | null;
+  customer_name: string;
+  customer_email: string;
+  customer_phone: string | null;
+  company_name: string | null;
   quantity: number;
-  price_at_purchase: number;
-  subtotal: number;
+  message: string | null;
+  status: InquiryStatus;
   created_at: Date;
+  updated_at: Date;
 }
 
-export interface OrderWithItems extends Order {
-  items: OrderItem[];
+export interface InquiryWithProduct extends Inquiry {
+  product: ProductListItem;
 }
 
 // Currency Types

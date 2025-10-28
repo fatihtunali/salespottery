@@ -67,6 +67,26 @@
     "feature3Title": "Kalite Garantisi",
     "feature3Description": "Günlük kullanım için gıda için güvenli, dayanıklı seramikler"
   },
+  "wholesale": {
+    "catalogBadge": "Toptan Seramik Kataloğu",
+    "heroTitle": "İşletmeniz İçin Premium El Yapımı Seramikler",
+    "heroSubtitle": "Geniş el yapımı seramik koleksiyonumuzu keşfedin. Perakendeciler, restoranlar, oteller ve hediyelik eşya mağazaları için ideal. Minimum sipariş: 50 adet.",
+    "browseCatalog": "Kataloğa Göz At",
+    "contactWhatsApp": "WhatsApp'tan İletişime Geç",
+    "requestQuote": "Toptan Fiyat Teklifi İste",
+    "whyChooseTitle": "Neden Toptan Hizmetimizi Seçmelisiniz",
+    "whyChooseSubtitle": "İşletmeniz için kaliteli ürünler ve güvenilir hizmet",
+    "qualityTitle": "%100 El Yapımı Kalite",
+    "qualityDescription": "Her parça, geleneksel teknikler ve premium malzemeler kullanılarak yetenekli zanaatkarlar tarafından özenle üretilir.",
+    "pricingTitle": "Toplu Alımlarda Fiyat Avantajı",
+    "pricingDescription": "50 adet ve üzeri siparişler için rekabetçi toptan fiyatlar. Büyük siparişlerde hacim indirimleri.",
+    "communicationTitle": "Doğrudan İletişim",
+    "communicationDescription": "WhatsApp, e-posta veya telefon ile anında yanıt alın. Fiyat teklifleri ve özel siparişler için buradayız.",
+    "pricingAvailable": "Toptan Fiyat Mevcuttur",
+    "pricingNote": "Toptan fiyatlandırma için teklif isteyin (minimum 50 adet)",
+    "wholesaleAvailable": "Toptan Satış Mevcuttur",
+    "contactDirectly": "Doğrudan Bize Ulaşın"
+  },
   "products": {
     "title": "Ürünler",
     "allProducts": "Tüm Ürünler",

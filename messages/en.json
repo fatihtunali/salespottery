@@ -67,6 +67,26 @@
     "feature3Title": "Quality Guaranteed",
     "feature3Description": "Food-safe, durable ceramics for everyday use"
   },
+  "wholesale": {
+    "catalogBadge": "Wholesale Pottery Catalog",
+    "heroTitle": "Premium Handcrafted Pottery for Your Business",
+    "heroSubtitle": "Discover our extensive collection of handmade ceramic pieces. Perfect for retailers, restaurants, hotels, and gift shops. Minimum order: 50 pieces.",
+    "browseCatalog": "Browse Catalog",
+    "contactWhatsApp": "Contact on WhatsApp",
+    "requestQuote": "Request Wholesale Quote",
+    "whyChooseTitle": "Why Choose Our Wholesale Service",
+    "whyChooseSubtitle": "Quality products and reliable service for your business",
+    "qualityTitle": "100% Handmade Quality",
+    "qualityDescription": "Each piece is carefully crafted by skilled artisans using traditional techniques and premium materials.",
+    "pricingTitle": "Bulk Pricing Available",
+    "pricingDescription": "Competitive wholesale pricing for orders of 50 pieces or more. Volume discounts on larger orders.",
+    "communicationTitle": "Direct Communication",
+    "communicationDescription": "Get instant responses via WhatsApp, email, or phone. We're here to help with quotes and custom orders.",
+    "pricingAvailable": "Wholesale Pricing Available",
+    "pricingNote": "Request a quote for wholesale pricing (minimum 50 pieces)",
+    "wholesaleAvailable": "Wholesale Available",
+    "contactDirectly": "Contact Us Directly"
+  },
   "products": {
     "title": "Products",
     "allProducts": "All Products",

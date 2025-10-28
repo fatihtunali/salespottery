@@ -25,17 +25,16 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+      <div className="relative aspect-square overflow-hidden rounded-lg bg-white border border-gray-200">
         <Image
           src={selectedImage.image_url}
           alt={selectedImage.alt_text || productName}
           fill
-          className="object-cover"
+          className="object-contain p-4"
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
-
       {/* Thumbnail Grid */}
       {images.length > 1 && (
         <div className="grid grid-cols-4 gap-4">
@@ -53,7 +52,7 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
                 src={image.thumbnail_url || image.image_url}
                 alt={image.alt_text || `${productName} - view ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain p-1 bg-white"
                 sizes="(max-width: 768px) 25vw, 10vw"
               />
             </button>
